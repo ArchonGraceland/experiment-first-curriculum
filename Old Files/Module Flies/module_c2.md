@@ -20,7 +20,7 @@
 
 **Upgraded Equipment ($5K Budget)**
 
-- **1 digital multimeter** (auto-ranging)
+- **2 digital multimeters** (auto-ranging) — one to measure voltage, one to measure current simultaneously
 - **Zinc strips or zinc-coated (galvanized) nails** — 4 pieces, each approximately 5 cm
 - **Copper strips or heavy copper wire** — 4 pieces, each approximately 5 cm
 - **Alligator clip leads** — 6 leads (from electronics kit)
@@ -122,7 +122,7 @@ Repeat Steps 1–2 with the potato, the apple, and the orange. Use fresh zinc an
 
 Set up two fresh lemon cells. Connect the copper strip of the first cell to the zinc strip of the second cell using an alligator clip lead. Now connect the remaining zinc strip (Cell 1) to the short leg of the LED, and the remaining copper strip (Cell 2) to the long leg of the LED.
 
-**What to observe:** What happens to the LED? Now disconnect the LED and measure the combined voltage across both cells with your multimeter. How does it compare to the voltage of a single cell? Reconnect the LED and observe it again. Chemical energy in the fruit is converting to electrical energy, which is converting to light energy.
+**What to observe:** What happens to the LED? Measure the combined voltage with your second multimeter. How does it compare to the voltage of a single cell? Chemical energy in the fruit is converting to electrical energy, which is converting to light energy.
 
 **Record:** Write the voltage across both cells combined. Compare it to the sum of the individual cell voltages. Sketch the complete circuit, labeling all components.
 
@@ -133,7 +133,7 @@ Set up two fresh lemon cells. Connect the copper strip of the first cell to the 
 
 ### Step 8. Measure the current.
 
-Set your multimeter to DC milliamps (mA). Disconnect one alligator clip from the LED circuit and insert the multimeter in series (so current flows through the meter to reach the LED). Read the current.
+Set the second multimeter to DC milliamps (mA). Disconnect one alligator clip from the LED circuit and insert the second multimeter in series (so current flows through the meter to reach the LED). Read the current.
 
 **What to observe:** The current is very small. This is why the LED may glow dimly. The fruit battery has high internal resistance: the electrolyte is weak, and the electrode surface area is small. Voltage tells you the "push"; current tells you how many electrons are actually flowing per second.
 

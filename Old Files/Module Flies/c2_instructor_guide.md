@@ -25,7 +25,7 @@
 
 - **Lay out all materials on the work surface.** Having everything visible before the student starts reduces transition friction and keeps momentum.
 - **Test one lemon cell yourself.** Confirm you get a reading on the multimeter (should be 0.7–1.0V). If the reading is zero, the zinc may be corroded — sand it lightly.
-- **Pre-set the multimeter.** Set it to DC voltage (~2V range or auto-ranging). The student will switch to DC milliamps for Step 8.
+- **Pre-set both multimeters.** Set one to DC voltage (~2V range or auto-ranging), one to DC milliamps. This prevents the student from spending time figuring out dials.
 - **Roll the lemon.** Give it a firm roll on the counter to break internal membranes. This dramatically improves results. Do this for all citrus fruits.
 - **Have sandpaper accessible.** If the student reuses electrodes across fruits, the surface oxidizes and readings degrade. A quick sand restores them.
 - **Lay newspaper or a tray under the workspace.** Fruit juice and metal fragments will get on the surface.
@@ -238,5 +238,5 @@ This module introduces concepts that align with AP Chemistry Unit 4 (Chemical Re
 - Discard all fruit — do not eat. Metal ions have leached into the flesh.
 - Rinse and dry all zinc and copper strips. Sand lightly to remove oxidation if reusing.
 - Wipe down the work surface — fruit juice corrodes metal surfaces.
-- Store multimeter with probes disconnected to preserve battery.
+- Store multimeters with probes disconnected to preserve battery.
 - Wash hands.

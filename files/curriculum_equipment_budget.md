@@ -127,7 +127,7 @@
 | P13 | Projectile motion | Projectile launcher, photogate timer, measuring tape, protractor | $150 |
 | P14 | Simple machines and work | Pulley system set, spring scales, lever materials, rope | $55 |
 | C1 | Acids and bases | Digital pH meter, lab glassware, cabbage, household substances | $50 |
-| C2 | Electrochemistry | Digital multimeters, fruits, zinc/copper electrodes, alligator clips, LED | $40 |
+| C2 | Electrochemistry | Digital multimeter, fruits, zinc/copper electrodes, alligator clips, LED | $40 |
 | C3 | Chemical reactions | Temperature probes, precision scale, lab glassware, baking soda, vinegar, citric acid | $60 |
 | C4 | Atomic structure | Metal salt set, diffraction grating spectroscopes, alcohol lamp, safety equipment | $100 |
 | C5 | Periodic table | Lab glassware, metal samples (Zn, Cu, Fe, Mg), dilute HCl, safety equipment | $45 |
