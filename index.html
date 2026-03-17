@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experiment-First Curriculum — Project Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f6;
+    --surface: #ffffff;
+    --border: #e2ddd5;
+    --border-strong: #c4bdb3;
+    --text: #2c2825;
+    --text-muted: #7a7268;
+    --accent: #b85c38;
+    --accent-light: #f5ebe4;
+    --green: #3a7d44;
+    --green-bg: #e8f3ea;
+    --amber: #a17623;
+    --amber-bg: #faf3e0;
+    --slate: #5a6570;
+    --slate-bg: #eef0f2;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --mono: 'DM Mono', 'Courier New', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--serif);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  /* Header */
+  header {
+    margin-bottom: 3.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--text);
+  }
+
+  header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitle {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 3rem;
+  }
+
+  section h2 {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Status items */
+  .status-group {
+    margin-bottom: 2rem;
+  }
+
+  .status-group-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+
+  .status-group-label.done {
+    background: var(--green-bg);
+    color: var(--green);
+  }
+
+  .status-group-label.next {
+    background: var(--amber-bg);
+    color: var(--amber);
+  }
+
+  .status-group-label.future {
+    background: var(--slate-bg);
+    color: var(--slate);
+  }
+
+  .status-list {
+    list-style: none;
+    margin-left: 0.25rem;
+  }
+
+  .status-list li {
+    padding: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .status-list li:last-child {
+    border-bottom: none;
+  }
+
+  .status-list li::before {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .status-list.done li::before { content: '✓'; color: var(--green); font-weight: 700; }
+  .status-list.next li::before { content: '→'; color: var(--amber); font-weight: 700; }
+  .status-list.future li::before { content: '○'; color: var(--slate); }
+
+  .status-list li .detail {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.15rem;
+  }
+
+  /* File cards */
+  .file-group {
+    margin-bottom: 2rem;
+  }
+
+  .file-group h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding-left: 0.25rem;
+  }
+
+  .file-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .file-card {
+    background: var(--surface);
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.15s ease;
+  }
+
+  .file-card:hover {
+    background: var(--accent-light);
+  }
+
+  .file-card .file-info {
+    flex: 1;
+  }
+
+  .file-card .file-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .file-card .file-desc {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+  }
+
+  .file-card .file-tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  .file-tag.spec { background: var(--slate-bg); color: var(--slate); }
+  .file-tag.student { background: var(--green-bg); color: var(--green); }
+  .file-tag.instructor { background: var(--amber-bg); color: var(--amber); }
+
+  .file-card a {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    margin-left: 1rem;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+  }
+
+  .file-card a:hover {
+    background: var(--accent);
+    color: white;
+  }
+
+  /* Links section */
+  .links-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .link-card {
+    flex: 1;
+    min-width: 240px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.15s ease;
+  }
+
+  .link-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .link-card .link-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .link-card .link-url {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    word-break: break-all;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1.25rem 4rem; }
+    header h1 { font-size: 1.6rem; }
+    .file-card { flex-wrap: wrap; gap: 0.5rem; }
+    .file-card a { margin-left: 0; }
+    .file-tag { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>Experiment-First Science Curriculum</h1>
+    <div class="subtitle">Project Hub · High School Physics, Chemistry, Biology, Earth &amp; Space · v0.1</div>
+  </header>
+
+  <!-- STATUS -->
+  <section>
+    <h2>Project Status</h2>
+
+    <div class="status-group">
+      <div class="status-group-label done">Completed</div>
+      <ul class="status-list done">
+        <li>Curriculum design specification (v0.1)<span class="detail">62 modules across 4 NGSS domains, scaffolding model, language policy</span></li>
+        <li>Assessment system specification (v0.1)<span class="detail">3-layer model: reports → checkpoints → AP benchmarks</span></li>
+        <li>Module C2 — student module<span class="detail">Fruit battery experiment, 8 steps, 5 terms, challenge mode</span></li>
+        <li>Module C2 — instructor guide<span class="detail">Setup, timing, facilitation, troubleshooting, expected results, report coaching</span></li>
+        <li>Module C2 — lab notebook worksheet<span class="detail">Printable worksheet with data table, sketch area, prediction &amp; reflection prompts</span></li>
+        <li>Research report tool — deployed<span class="detail">Next.js on Vercel with AI feedback layer (Claude Sonnet)</span></li>
+        <li>AI feedback system — designed &amp; implemented<span class="detail">Questions-only feedback, 4-phase scaffolding, terminology hints, first-draft snapshots</span></li>
+      </ul>
+    </div>
+
+    <div class="status-group">
+      <div class="status-group-label next">Next Up</div>
+      <ul class="status-list next">
+        <li>Test C2 with student<span class="detail">Observe, don't instruct — note stalls, skips, and loss of interest</span></li>
+        <li>Build modules C1, P1, B1<span class="detail">Three Tier 1 entry points using C2 as template</span></li>
+        <li>Make report tool module-agnostic<span class="detail">Load module data from config instead of hardcoded C2 content</span></li>
+      </ul>
+    </div>
+
+    <div class="status-group">
+      <div class="status-group-label future">Future</div>
+      <ul class="status-list future">
+        <li>Save/load report progress<span class="detail">Currently lost on page refresh</span></li>
+        <li>Export finished reports as PDF</li>
+        <li>Portfolio view — all completed reports</li>
+        <li>Progress tracking dashboard</li>
+        <li>Build remaining modules: Tier 1 → Tier 2 → Tier 3</li>
+        <li>Checkpoint 1 question bank (modules 1–12)</li>
+        <li>Source AP released questions for first benchmark</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FILES -->
+  <section>
+    <h2>Documents</h2>
+
+    <div class="file-group">
+      <h3>Specifications</h3>
+      <div class="file-grid">
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Curriculum Design Specification</div>
+            <div class="file-desc">Design philosophy, module anatomy, 62-module map, scaffolding, research reports, AI feedback</div>
+          </div>
+          <span class="file-tag spec">Spec</span>
+          <a href="files/curriculum_spec.md" download>Download</a>
+        </div>
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Assessment System Specification</div>
+            <div class="file-desc">3-layer assessment, checkpoints, AP benchmarks, gap mapping, portfolio defense</div>
+          </div>
+          <span class="file-tag spec">Spec</span>
+          <a href="files/assessment_spec.md" download>Download</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="file-group">
+      <h3>Module C2 — Can You Make a Battery from Fruit?</h3>
+      <div class="file-grid">
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Student Module</div>
+            <div class="file-desc">Experiment procedure, terminology, challenge mode, glossary entries, report prompts</div>
+          </div>
+          <span class="file-tag student">Student</span>
+          <a href="files/module_c2.md" download>Download</a>
+        </div>
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Instructor Guide</div>
+            <div class="file-desc">Setup, timing, facilitation rules, expected results, report coaching, troubleshooting</div>
+          </div>
+          <span class="file-tag instructor">Instructor</span>
+          <a href="files/c2_instructor_guide.md" download>Download</a>
+        </div>
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Lab Notebook Worksheet</div>
+            <div class="file-desc">Printable worksheet — prediction, data table, circuit sketch, reflection prompts</div>
+          </div>
+          <span class="file-tag student">Student</span>
+          <a href="files/c2_lab_notebook.md" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section>
+    <h2>Tools</h2>
+    <div class="links-row">
+      <a href="https://research-report-tool.vercel.app/" target="_blank" rel="noopener" class="link-card">
+        <div class="link-title">Research Report Tool</div>
+        <div class="link-url">research-report-tool.vercel.app</div>
+      </a>
+      <a href="https://github.com/ArchonGraceland/research-report-tool" target="_blank" rel="noopener" class="link-card">
+        <div class="link-title">GitHub Repository</div>
+        <div class="link-url">github.com/ArchonGraceland/research-report-tool</div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    Experiment-First Science Curriculum · v0.1 · March 2026
+  </footer>
+
+</div>
+
+</body>
+</html>
