@@ -3,8 +3,9 @@
 ## Curriculum Design Specification
 
 **Target Learner:** 16-year-old with ADHD
-**Scope:** High School Physics, Chemistry, Biology, Earth & Space Science
-**Version:** 0.1 — Draft for Refinement
+**Scope:** High School Physics, Chemistry, Biology, Earth & Space Science, Health Science
+**Version:** 0.2 — Health Science Integration
+**Previous Version:** 0.1 — Draft for Refinement
 **Date:** March 2026
 
 ---
@@ -25,7 +26,7 @@ This curriculum inverts the traditional sequence. Instead of definition → expl
 
 3. **Short cycles with immediate payoff.** Each module is completable in 25–40 minutes. The observation-to-understanding arc closes within a single session. No multi-day buildups before the student sees a result.
 
-4. **Interleaved subjects.** Physics, chemistry, and biology rotate rather than running in isolated blocks. This combats habituation and builds cross-disciplinary pattern recognition.
+4. **Interleaved subjects.** Physics, chemistry, biology, earth & space science, and health science rotate rather than running in isolated blocks. This combats habituation and builds cross-disciplinary pattern recognition. The curriculum spans five domains across a two-year timeline.
 
 5. **The scientific method is taught by doing, not by lecture.** Methodological concepts (hypothesis formulation, variable isolation, controlled experimentation) are introduced through embedded scaffolding within experiments, not as a prerequisite unit.
 
@@ -85,7 +86,7 @@ The second version defers the terminology, which means the student now has a col
 
 Terms introduced in one module are used without re-explanation in subsequent modules. The living glossary (Section 5) serves as the reference. If a student encounters a term they have forgotten, they look it up in their own glossary — which is anchored to their own experimental experience, not an abstract definition.
 
-Expected accumulation rate: approximately 3–5 terms per module, yielding roughly 185–310 scientific terms across the full 62-module curriculum. This exceeds the vocabulary load of a standard high school science sequence, with significantly stronger retention due to experiential anchoring.
+Expected accumulation rate: approximately 3–5 terms per module, yielding roughly 255–390 scientific terms across the full 80-module curriculum (including ~70–80 terms from the Health Science strand). This exceeds the vocabulary load of a standard high school science sequence, with significantly stronger retention due to experiential anchoring.
 
 ---
 
@@ -104,7 +105,7 @@ Each experiment includes a Method Sidebar that runs alongside the procedure. The
 | **1: Narrated** | 1–15 | Sidebar explicitly names each methodological step after the student performs it. "You just formulated a hypothesis — a testable prediction based on prior observation." | Follow the procedure. Read the sidebar. Begin recognizing the pattern. |
 | **2: Prompted** | 16–30 | Sidebar asks the student to name the step before revealing the answer. "What did you just do? (Flip to see: You identified the independent variable.)" | Attempt to name the methodological step. Self-correct against the sidebar. |
 | **3: Independent** | 31–48 | Sidebar provides only the category. "Methodological step: ______." Student fills in from memory. | Identify the step by name. Record it in the lab notebook. |
-| **4: Designer** | 49–62 | No sidebar. Student designs the experimental procedure themselves, including controls, variables, and hypothesis. Module provides only the phenomenon and materials. | Full experimental design. The student is now practicing science, not following instructions. |
+| **4: Designer** | 49–80 | No sidebar. Student designs the experimental procedure themselves, including controls, variables, and hypothesis. Module provides only the phenomenon and materials. | Full experimental design. The student is now practicing science, not following instructions. |
 
 ### 4.3 Core Methodological Terms
 
@@ -153,11 +154,11 @@ The student maintains a personal glossary throughout the curriculum. Unlike a te
 
 ## 6. Concept Map — Full Curriculum Skeleton
 
-The curriculum is divided into two stages across four NGSS science domains. The Core Curriculum (48 modules, ~24 weeks) covers every concept a student needs for a thorough high school science education. The Advanced Curriculum (14 modules, ~7 weeks) extends into deeper topics for students who complete the core. Together they form a complete 31-week program spanning the full academic year.
+The curriculum is divided into two stages across five science domains (four NGSS domains plus Health Science). The Core Curriculum (61 modules, ~31 weeks) covers every concept a student needs for a thorough high school science education plus the science of personal health and performance. The Advanced Curriculum (19 modules, ~10 weeks) extends into deeper topics for students who complete the core. Together they form a complete 80-module program spanning two academic years.
 
 ---
 
-### STAGE 1: CORE CURRICULUM (40 Modules)
+### STAGE 1: CORE CURRICULUM (61 Modules)
 
 #### 6.1 Physics — Core (Modules P1–P14)
 
@@ -220,13 +221,35 @@ The curriculum is divided into two stages across four NGSS science domains. The 
 - **Tier 2:** Builds on Tier 1 vocabulary and concepts. Requires 2–3 prior modules.
 - **Tier 3:** Advanced application. Requires comfort with the subject's foundational modules.
 
-Core total: 14 Physics + 14 Chemistry + 12 Biology = 40 modules. At 2 modules per week, the core curriculum takes approximately 20 weeks.
+Core total: 14 Physics + 14 Chemistry + 12 Biology = 40 NGSS modules. With 8 Earth & Space Science and 13 Health Science core modules added below, the full core is 61 modules (~31 weeks at 2 modules per week).
 
 ---
 
-### STAGE 2: ADVANCED CURRICULUM (10 Modules)
+#### 6.5 Health Science — Core (Modules H1–H13)
 
-These modules extend into deeper or more specialized topics. They are designed for students who have completed the relevant core modules and want to push further. Each advanced module builds explicitly on core concepts and vocabulary.
+The Health Science strand ("Self-Improvement Through Science") applies experimental rigor to the most personally consequential domain: the student's own body and how they take care of it. It is normative, not neutral — grounded in the clear position that the science on sleep, nutrition, exercise, and screen habits is unambiguous, and the student will measure the effects on themselves. For an ADHD learner, this strand is high-leverage: the relationships between blood sugar stability and sustained attention, exercise and executive function, and sleep and working memory are all measurable and all within the student's control. The full strand specification is in `health_science_strand.md`.
+
+| Module | Core Concept | Key Vocabulary | Candidate Experiment | Tier | Prereqs |
+|---|---|---|---|---|---|
+| H1 | Macronutrients and energy | Macronutrient, carbohydrate, protein, lipid, calorie, kilocalorie | Burn different foods in a calorimeter; compare measured energy to nutrition labels | 1 | None (connects to C14) |
+| H2 | Digestion and enzymes | Enzyme, substrate, amylase, hydrolysis, denaturation, active site | Test salivary amylase: chew cracker for 2 min, test for sugar vs. unchewed control | 1 | None |
+| H3 | Protein, muscle, and diet planning | Amino acid, complete protein, essential amino acid, nitrogen balance, protein synthesis, recommended daily intake | Analyze 10 nutrition labels; calculate protein per calorie; estimate daily protein needs; plan three meals that hit the target | 1 | H1 |
+| H4 | Blood sugar and glycemic response | Glucose, glycemic index, insulin, pancreas, blood glucose, glycemic load | Glucometer comparison: blood sugar curves after white bread vs. whole grain vs. apple vs. cheese over four mornings | 2 | H1, H2 |
+| H5 | Micronutrients and deficiency | Vitamin, mineral, micronutrient, deficiency, antioxidant, bioavailability | DCPIP titration to measure vitamin C content in different juices; test whether boiling destroys vitamin C | 2 | H1, C1 |
+| H6 | Exercise and the cardiovascular system | VO₂, heart rate, stroke volume, cardiac output, aerobic threshold, recovery rate | Measure heart rate at rest, walking, jogging, sprinting; plot recovery curves; calculate estimated cardiac output | 2 | H1, B7 |
+| H7 | Strength training and muscle adaptation | Muscle fiber (Type I/II), hypertrophy, progressive overload, motor unit recruitment, compound movement, repetition maximum | Baseline: max push-ups, wall-sit time, grip strength, vertical jump; 3-week bodyweight routine (3×/week); retest | 2 | H6, B4 |
+| H8 | Dopamine, screens, and sustained attention | Dopamine, variable-ratio reinforcement, tolerance, downregulation, sustained attention, default mode network, novelty bias | Measure attention (reading comprehension + digit span) after 3 conditions on separate days: 30 min short-form video, 30 min quiet rest, 30 min book reading | 2 | B12, H7 |
+| H9 | Sleep and circadian biology | Circadian rhythm, melatonin, cortisol, REM sleep, sleep architecture, chronotype | Track reaction time and digit span at 4 daily time points for 5 days; correlate with previous night's sleep duration | 2 | B7, B12 |
+| H10 | Skin, sebum, and acne | Sebaceous gland, sebum, keratinocyte, comedone, inflammation, androgen, microbiome | Map facial oil production with blotting papers on 4 zones for 7 days; correlate with food diary (high-glycemic vs. balanced days) | 3 | H1, H4, B2 |
+| H11 | Stress physiology | Cortisol, sympathetic nervous system, parasympathetic, fight-or-flight, heart rate variability, allostatic load | Measure heart rate during baseline, mental math stress test, and guided breathing recovery; test whether exercise pre-treatment reduces the stress response | 3 | H6, H9, B12 |
+| H12 | Appearance, energy, and the integrated system | Body composition, lean mass, subcutaneous fat, vascularity, energy balance, thermic effect of food | Review all personal data from H1–H11; identify which variables improved with better habits; calculate energy balance from 3-day food diary | 3 | H1–H11 |
+| H13 | Self-directed health experiment | Controlled experiment (revisited), serving size, daily value, added sugar, saturated fat, sodium | Phase 4 Designer module: student designs and executes a 5–7 day self-directed experiment on a personally relevant health question | 3 | H1–H12 |
+
+---
+
+### STAGE 2: ADVANCED CURRICULUM (19 Modules)
+
+These modules extend into deeper or more specialized topics. They are designed for students who have completed the relevant core modules and want to push further. Each advanced module builds explicitly on core concepts and vocabulary. The advanced curriculum is designed for Year 2, at a slower pace (1–2 modules per week) to accommodate longer self-experiments.
 
 #### 6.5 Advanced Physics (Modules AP1–AP3)
 
@@ -253,7 +276,7 @@ These modules extend into deeper or more specialized topics. They are designed f
 | AB2 | Human body systems | Organ system, circulatory, respiratory, musculoskeletal, integration | Measure lung capacity, heart rate recovery, grip strength fatigue curves | B7, B12 |
 | AB3 | Plant biology and tropisms | Germination, tropism, auxin, xylem, phloem, transpiration | Grow seeds under varied light/gravity; measure transpiration rates | B3, B9 |
 
-Advanced total: 3 Physics + 4 Chemistry + 3 Biology = 10 modules. At 2 modules per week, the advanced curriculum takes approximately 5 weeks.
+Advanced total: 3 Physics + 4 Chemistry + 3 Biology = 10 NGSS modules. With 4 Earth & Space and 5 Health Science advanced modules, the full advanced curriculum is 19 modules (~10 weeks at 1–2 modules per week).
 
 ---
 
@@ -285,42 +308,70 @@ Earth and Space Science is the fourth NGSS domain. These modules add geological,
 
 Earth and Space Science total: 8 core + 4 advanced = 12 modules. At 2 modules per week, this adds approximately 6 weeks.
 
-#### 6.10 Curriculum Summary
+#### 6.10 Health Science — Advanced (Modules AH1–AH5)
 
-| Stage | Physics | Chemistry | Biology | Earth & Space | Total Modules | Duration |
-|---|---|---|---|---|---|---|
-| Core | 14 | 14 | 12 | 8 | 48 | ~24 weeks |
-| Advanced | 3 | 4 | 3 | 4 | 14 | ~7 weeks |
-| **Full Program** | **17** | **18** | **15** | **12** | **62** | **~31 weeks** |
+| Module | Core Concept | Key Vocabulary | Candidate Experiment | Prereqs |
+|---|---|---|---|---|
+| AH1 | Metabolism and metabolic rate | Basal metabolic rate, metabolic pathway, ATP yield, thermic effect, metabolic equivalent (MET) | Estimate BMR using Harris-Benedict equation; calculate total daily energy expenditure using MET values; compare to actual food intake from a 3-day food diary | H1, H4, B4 |
+| AH2 | Gut microbiome and digestion | Microbiome, probiotic, prebiotic, fermentation, short-chain fatty acid, dysbiosis | Culture bacteria from fermented foods on agar; compare colony morphology; test pH changes during milk fermentation over 24 hours | H2, B2, C1 |
+| AH3 | Training programming and adaptation | Periodization, supercompensation, EPOC, lactate threshold, deload, training volume | 6-week periodized training program (3×/week); weekly measurements of resting heart rate, strength benchmarks, recovery metrics; deload in week 4; plot adaptation curves | H6, H7 |
+| AH4 | Nutrition, inflammation, and skin | Glycemic load, omega-3/omega-6 ratio, inflammatory cytokine, insulin-like growth factor (IGF-1), oxidative stress, sebum composition | 2-week controlled diet comparison: Week 1 normal diet with daily skin oil measurements; Week 2 reduce high-glycemic foods, increase omega-3 sources; compare skin metrics and energy levels | H4, H10, AH1 |
+| AH5 | Building a personal protocol | Protocol, baseline, target, tracking, compliance, dose-response, n-of-1 experiment | Capstone: synthesize all Health Science data into a personal daily protocol (nutrition targets, training plan, sleep protocol, stress management); implement for 4 weeks; present as portfolio defense | All H and AH modules |
 
-At two modules per week, the full program spans approximately 31 weeks — a complete academic year. The core curriculum alone (48 modules, ~24 weeks) covers all four NGSS science domains and constitutes a comprehensive high school science education. The advanced track adds depth for motivated students or can be spread across a second year.
+Health Science total: 13 core + 5 advanced = 18 modules (~18 weeks interleaved with other strands).
+
+#### 6.11 Curriculum Summary
+
+| Stage | Physics | Chemistry | Biology | Earth & Space | Health Science | Total Modules | Duration |
+|---|---|---|---|---|---|---|---|
+| Core | 14 | 14 | 12 | 8 | 13 | 61 | ~31 weeks |
+| Advanced | 3 | 4 | 3 | 4 | 5 | 19 | ~10 weeks |
+| **Full Program** | **17** | **18** | **15** | **12** | **18** | **80** | **~40 weeks** |
+
+At two modules per week, the full program spans approximately 40 weeks. This fits a two-year timeline comfortably:
+
+- **Year 1 (~40 weeks):** Core curriculum across all five strands (61 modules). Health Science core modules interleave starting around week 5–6 once foundational biology and chemistry are established. Pace: 2 modules per week with generous buffer for multi-week experiments (H7 involves a 3-week training period, H10 involves 7-day data collection).
+- **Year 2 (~20–24 weeks):** Advanced curriculum across all five strands (19 modules). Pace slows to 1–2 modules per week, allowing the longer self-experiments (AH3 = 6 weeks, AH4 = 2 weeks, AH5 = 4 weeks) and the portfolio defense.
 
 ---
 
 ## 7. Suggested Sequencing
 
-Modules interleave across all four subjects. Below is a suggested sequence for the first 16 modules, demonstrating the rotation pattern. Earth and Space Science modules enter the rotation once foundational physics and chemistry concepts are established (around week 4). The full 62-module sequence will be finalized after the proof of concept is validated.
+Modules interleave across all five subjects. Below is the suggested sequence for the first 25 weeks, demonstrating the rotation pattern. Earth and Space Science modules enter the rotation once foundational physics and chemistry concepts are established (around week 4). Health Science modules enter around week 6 once foundational biology (B1–B3) and chemistry (C1–C3) are in place. The full 80-module sequence spans two academic years.
 
-| Week | Module | Subject | Concept |
-|---|---|---|---|
-| 1 | C1 | Chemistry | Acids, bases, and pH indicators |
-| 1 | P1 | Physics | Forces, motion, and inertia |
-| 2 | B1 | Biology | Cell structure and microscopy |
-| 2 | C2 | Chemistry | Electrochemistry (fruit battery) |
-| 3 | P2 | Physics | Gravity and free fall |
-| 3 | B2 | Biology | Microorganisms and culturing |
-| 4 | C3 | Chemistry | Chemical reactions and energy |
-| 4 | E1 | Earth & Space | Minerals and rocks |
-| 5 | P3 | Physics | Energy conservation |
-| 5 | B3 | Biology | Photosynthesis |
-| 6 | E2 | Earth & Space | Plate tectonics |
-| 6 | P4 | Physics | Electricity fundamentals |
-| 7 | C4 | Chemistry | Atomic structure and emission spectra |
-| 7 | B4 | Biology | Cellular respiration and fermentation |
-| 8 | E3 | Earth & Space | Weathering and erosion |
-| 8 | P5 | Physics | Static electricity and charge |
+| Week | Slot 1 | Slot 2 |
+|---|---|---|
+| 1 | C1 — Acids, bases, and pH indicators | P1 — Forces, motion, and inertia |
+| 2 | B1 — Cell structure and microscopy | C2 — Electrochemistry (fruit battery) |
+| 3 | P2 — Gravity and free fall | B2 — Microorganisms and culturing |
+| 4 | C3 — Chemical reactions and energy | E1 — Minerals and rocks |
+| 5 | P3 — Energy conservation | B3 — Photosynthesis |
+| 6 | **H1 — Macronutrients and energy** | E2 — Plate tectonics |
+| 7 | P4 — Electricity fundamentals | **H2 — Digestion and enzymes** |
+| 8 | B4 — Respiration | C4 — Atomic structure |
+| 9 | **H3 — Protein, muscle, and diet planning** | E3 — Weathering and erosion |
+| 10 | P5 — Static electricity | C5 — Periodic table |
+| 11 | B5 — Cell division | **H4 — Blood sugar and glycemic response** |
+| 12 | P6 — Magnetism | C6 — Bonding |
+| 13 | B6 — Genetics | **H5 — Micronutrients and deficiency** |
+| 14 | E4 — Atmosphere and weather | P7 — Waves and sound |
+| 15 | B7 — Homeostasis | **H6 — Exercise and cardiovascular system** |
+| 16 | C7 — States of matter | P8 — Light and optics |
+| 17 | **H7 — Strength training (baseline + begin training)** | B8 — Immune system |
+| 18 | C8 — Gas laws | E5 — Climate science |
+| 19 | P9 — Electromagnetic spectrum | **H8 — Dopamine, screens, and sustained attention** |
+| 20 | B9 — Ecosystems | **H9 — Sleep and circadian biology** |
+| 21 | C9 — Solutions and concentration | E6 — Geologic time |
+| 22 | **H10 — Skin, sebum, and acne** | P10 — Heat and thermodynamics |
+| 23 | B10 — Biogeochemical cycles | **H11 — Stress physiology** |
+| 24 | C10 — Reaction rates | P11 — Momentum |
+| 25 | **H12 — Appearance, energy, and the integrated system** | B11 — Evolution |
 
-Each week targets two modules (~1 hour each including the research report). This pace is adjustable. The interleaving pattern ensures the student never spends more than one consecutive session in the same subject. Earth and Space Science enters the rotation in week 4 once the student has foundational experience with forces, chemical reactions, and microscopy.
+H13 (self-directed experiment) follows in weeks 26–27 as a Tier 3 capstone module. The remaining core modules (P12–P14, C11–C14, B12, E7–E8) fill weeks 26–31.
+
+Each week targets two modules (~1 hour each including the research report). Health Science modules appear approximately once every 2–3 weeks, increasing in frequency as biology modules provide more prerequisite knowledge. H8 and H9 are deliberately sequenced back-to-back (weeks 19–20): H8 establishes the effect of high-stimulus content on sustained attention; H9 adds the effect of screen time on sleep architecture. Together they create a complete picture of how short-form content degrades both waking focus and sleep quality.
+
+Note: H7 (Strength Training) involves a 3-week training period. The student performs baseline measurements in week 17, trains 3×/week on their own time, and records retest data around week 20. The research report is written after the retest.
 
 ---
 
@@ -328,7 +379,7 @@ Each week targets two modules (~1 hour each including the research report). This
 
 Every module culminates in a mini research report. This is not a lab report. A lab report recites procedure and records data. A research report asks a question, uses an experiment to answer it, and argues for a conclusion. The student is an investigator writing for an audience, not a technician filling in blanks.
 
-Over 62 modules, the student builds a portfolio of 62 research reports — a body of original scientific work, written in their own voice, using precise scientific language, grounded in experiments they conducted themselves.
+Over 80 modules, the student builds a portfolio of 80 research reports — a body of original scientific work, written in their own voice, using precise scientific language, grounded in experiments they conducted themselves.
 
 ### 8.1 Why Research Reports, Not Lab Reports
 
@@ -363,7 +414,7 @@ Just as the Method Sidebar (Section 4) gradually transfers ownership of the scie
 | **1: Guided** | 1–15 | Each section includes a detailed prompt with an example of what a strong response looks like. Key scientific terms are suggested in the prompt. The report form highlights which terms from the module should appear in the analysis. |
 | **2: Prompted** | 16–30 | Prompts remain but examples are removed. The student receives a checklist: "Did you state your independent variable? Did you use at least 2 terms from this module in your analysis? Did you cite specific data?" |
 | **3: Structured** | 31–48 | Only section headings and one-sentence prompts remain. The student writes freely within the structure. The checklist becomes self-administered. |
-| **4: Independent** | 49–62 | The student receives only the research question (or formulates their own in Phase 4 Designer modules). They produce the full report from the blank structure, mirroring the process of writing an actual research paper. |
+| **4: Independent** | 49–80 | The student receives only the research question (or formulates their own in Phase 4 Designer modules). They produce the full report from the blank structure, mirroring the process of writing an actual research paper. |
 
 ### 8.4 Language Standards in Reports
 
@@ -384,7 +435,7 @@ The tool:
 - **Includes the module's key terminology** as reference chips that the student can tap to see definitions. This keeps the glossary accessible without breaking flow.
 - **Auto-saves continuously** so the student never loses work. They can leave and return without penalty.
 - **Generates a formatted report** when complete. The output looks like a real mini research paper with the student's name, the module title, date, and all six sections formatted with proper headings.
-- **Builds a portfolio over time.** All 62 reports accumulate into a single collection. By the end of the curriculum, the student has a tangible body of scientific work.
+- **Builds a portfolio over time.** All 80 reports accumulate into a single collection. By the end of the curriculum, the student has a tangible body of scientific work.
 
 ### 8.6 Review and Feedback
 
@@ -400,11 +451,11 @@ Feedback should be conversational, not corrective. The goal is to push the stude
 
 ### 8.7 Portfolio and Progress Tracking
 
-The 62 research reports collectively serve as both a learning artifact and an assessment tool:
+The 80 research reports collectively serve as both a learning artifact and an assessment tool:
 
 - Early reports (Modules 1–15) will be shorter, rely more on prompts, and may have vocabulary gaps. This is expected.
 - Mid-curriculum reports (Modules 16–40) should show increasing independence, longer analysis sections, and cross-references to earlier experiments.
-- Late reports (Modules 41–62) should read as genuine mini research papers: self-directed questions, rigorous methodology, evidence-based conclusions, and sophisticated vocabulary.
+- Late reports (Modules 41–80) should read as genuine mini research papers: self-directed questions, rigorous methodology, evidence-based conclusions, and sophisticated vocabulary.
 
 Comparing Report 1 to Report 30 gives a concrete, visible measure of growth that the student can see for themselves. For an ADHD learner, this tangible evidence of progress is a powerful motivator.
 
@@ -454,7 +505,7 @@ The AI feedback system follows the same four-phase scaffolding model as the Meth
 | **1: Specific** | 1–15 | Concrete, targeted questions with resource hints. "What is the precise term for what happens when atoms lose electrons? Check the terminology panel — scan the 'You Observed It When' column." |
 | **2: Broader** | 16–30 | Still asks questions, but resource hints are less specific. "Check your glossary" instead of pointing to a specific column. |
 | **3: Open** | 31–48 | Asks the question with no resource pointer. The student locates their own resources. |
-| **4: On Request** | 49–62 | AI feedback is available but not automatic. The student chooses when to request a check. In Designer modules, the student is expected to self-assess. |
+| **4: On Request** | 49–80 | AI feedback is available but not automatic. The student chooses when to request a check. In Designer modules, the student is expected to self-assess. |
 
 **Paper Notebook → Digital Report Workflow**
 
@@ -462,7 +513,7 @@ The lab notebook and the research report are deliberately separate tools with se
 
 **Deployment**
 
-The digital report tool is a Next.js application deployed on Vercel. The AI feedback layer uses Claude Sonnet via a server-side API route — the API key is stored as a Vercel environment variable and never reaches the browser. Cost per feedback check is approximately $0.003, yielding an estimated total cost of ~$2 for AI feedback across the full 62-module curriculum.
+The digital report tool is a Next.js application deployed on Vercel. The AI feedback layer uses Claude Sonnet via a server-side API route — the API key is stored as a Vercel environment variable and never reaches the browser. Cost per feedback check is approximately $0.003, yielding an estimated total cost of ~$2.60 for AI feedback across the full 80-module curriculum.
 
 ---
 

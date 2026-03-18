@@ -2,9 +2,10 @@
 
 ## Experiment-First Science Curriculum
 
-**Companion to:** Curriculum Design Specification v0.1
+**Companion to:** Curriculum Design Specification v0.2
 **Benchmark:** AP Physics 1, AP Chemistry, AP Biology, AP Environmental Science
-**Version:** 0.1 — Draft for Refinement
+**Version:** 0.2 — Health Science Integration
+**Previous Version:** 0.1 — Draft for Refinement
 **Date:** March 2026
 
 ---
@@ -29,7 +30,7 @@ The assessment system operates at three levels, each measuring different things 
 
 | Layer | What It Measures | Frequency | Format | Duration |
 |---|---|---|---|---|
-| **1: Research Reports** | Vocabulary precision, evidence-based reasoning, investigative thinking, scientific writing | Every module (62 total) | Written report using digital tool | 15–20 min per module |
+| **1: Research Reports** | Vocabulary precision, evidence-based reasoning, investigative thinking, scientific writing | Every module (80 total) | Written report using digital tool | 15–20 min per module |
 | **2: Concept Checkpoints** | Concept retention, term recall, ability to apply knowledge to new scenarios | Every ~12 modules (5 checkpoints across the core curriculum) | 15–20 questions: multiple choice + short free response | 20–30 min |
 | **3: AP-Aligned Benchmarks** | Comprehensive understanding comparable to AP exam performance | End of core curriculum; end of advanced curriculum | Full AP-style practice exam (MC + free response) | Split across 2–3 sessions |
 
@@ -64,10 +65,10 @@ Checkpoints are short, focused assessments administered after every ~12 modules.
 | Checkpoint | After Modules | Approximate Week | Subjects Covered |
 |---|---|---|---|
 | CP1 | 1–12 | Week 6 | Foundational physics (P1–P4), foundational chemistry (C1–C3), foundational biology (B1–B3), intro earth science (E1–E2) |
-| CP2 | 13–24 | Week 12 | Mid-core physics (P5–P9), mid-core chemistry (C4–C8), mid-core biology (B4–B7), mid earth science (E3–E5) |
-| CP3 | 25–36 | Week 18 | Advanced core physics (P10–P14), advanced core chemistry (C9–C14), advanced core biology (B8–B12), late earth science (E6–E8) |
-| CP4 | 37–48 | Week 24 | Cumulative core review — all 48 core modules; emphasis on cross-disciplinary connections |
-| CP5 | 49–62 | Week 31 | Advanced modules (AP, AC, AB, AE series); integration of advanced concepts with core foundations |
+| CP2 | 13–24 | Week 12 | Mid-core physics (P5–P9), mid-core chemistry (C4–C8), mid-core biology (B4–B7), mid earth science (E3–E5), health science foundations (H1–H4) |
+| CP3 | 25–36 | Week 18 | Advanced core physics (P10–P14), advanced core chemistry (C9–C14), advanced core biology (B8–B12), late earth science (E6–E8), health science mid-core (H5–H9) |
+| CP4 | 37–61 | Week 26 | Cumulative core review — all 61 core modules including all Health Science core (H1–H13); emphasis on cross-disciplinary connections and the integration of health science with biology and chemistry |
+| CP5 | 62–80 | Week 40 | Advanced modules (AP, AC, AB, AE, AH series); integration of advanced concepts with core foundations; Health Science advanced (AH1–AH5) |
 
 **Checkpoint Structure**
 
@@ -88,7 +89,7 @@ Each checkpoint contains 15–20 questions in three formats:
 
 ### 2.3 Layer 3: AP-Aligned Benchmarks
 
-Benchmarks are comprehensive assessments administered twice: once after the core curriculum (48 modules) and once after the advanced curriculum (62 modules). They use actual released AP exam questions or close approximations and are the primary tool for comparing the student's performance against national norms.
+Benchmarks are comprehensive assessments administered twice: once after the core curriculum (61 modules) and once after the advanced curriculum (80 modules). They use actual released AP exam questions or close approximations and are the primary tool for comparing the student's performance against national norms.
 
 **AP Exam Alignment Map**
 
@@ -96,7 +97,7 @@ Benchmarks are comprehensive assessments administered twice: once after the core
 |---|---|---|---|
 | AP Physics 1 | P1–P14, AP1–AP3 | Post-core (P1–P14); post-advanced (+ AP1–AP3) | ~85% of AP Physics 1 content; ~40% of AP Physics 2 |
 | AP Chemistry | C1–C14, AC1–AC4 | Post-core (C1–C14); post-advanced (+ AC1–AC4) | ~80% of AP Chemistry content |
-| AP Biology | B1–B12, AB1–AB3 | Post-core (B1–B12); post-advanced (+ AB1–AB3) | ~75% of AP Biology content |
+| AP Biology | B1–B12, AB1–AB3, H1–H13, AH1–AH5 | Post-core (B1–B12 + H modules); post-advanced (+ AB1–AB3, AH1–AH5) | ~80% of AP Biology content (Health Science adds coverage of Units 2, 3, and 6: cell structure, cellular energetics, and gene expression/regulation) |
 | AP Environmental Science | E1–E8, AE1–AE4, B9–B11 | Post-core (E1–E8 + B9–B11); post-advanced (+ AE1–AE4) | ~70% of AP Environmental Science content |
 
 **Benchmark Administration**
@@ -177,10 +178,12 @@ At the end of the curriculum, the student presents a portfolio defense: a verbal
 
 ### 5.1 Structure
 
-1. The student selects 3–5 of their best research reports from the full 62-module portfolio.
+1. The student selects 3–5 of their best research reports from the full 80-module portfolio.
 2. For each selected report, the student prepares a 5–7 minute verbal presentation covering: the research question, what they found, what it means, and what they would investigate next.
 3. The instructor (or a small audience — family members, a tutor, a peer) asks follow-up questions. These questions probe depth: "What would happen if you changed X?" "How does this connect to [concept from a different module]?"
 4. The student responds in real time, demonstrating the ability to think scientifically on their feet, not just in writing.
+
+**Note on AH5 (Building a Personal Protocol):** This Health Science capstone module is an especially strong portfolio defense candidate. The student presents personal data collected across multiple modules, a self-designed protocol grounded in evidence, measured results from 4 weeks of implementation, and their own analysis of what worked. This is among the most compelling possible portfolio entries because it is entirely about the student's own body and their own evidence-based decisions.
 
 ### 5.2 Evaluation Criteria
 
@@ -209,13 +212,13 @@ A digital tracking tool aggregates data from all three assessment layers into a 
 - **Research report metrics:** Terms used correctly per module, evidence quality score, investigation quality score — plotted over time to show growth.
 - **Checkpoint results:** Gap map for each checkpoint, showing which modules are green/yellow/red. Track how gaps close (or persist) over time.
 - **AP benchmark scores:** Approximate AP score (1–5) for each subject. Compare post-core vs. post-advanced to measure growth.
-- **Vocabulary accumulation:** Total terms introduced vs. total terms used correctly in reports and checkpoints. This is the simplest metric and the most motivating for the student to see climb over time.
+- **Vocabulary accumulation:** Total terms introduced vs. total terms used correctly in reports and checkpoints. Expected range: 255–390 terms across the full 80-module curriculum (including ~70–80 from Health Science). This is the simplest metric and the most motivating for the student to see climb over time.
 
 ### 6.2 Visualization
 
 The student sees a dashboard with four views:
 
-- **The Concept Map:** A visual grid of all 62 modules color-coded green/yellow/red based on the latest checkpoint data. This is the primary "where am I" view.
+- **The Concept Map:** A visual grid of all 80 modules color-coded green/yellow/red based on the latest checkpoint data. This is the primary "where am I" view.
 - **The Growth Curve:** A line graph showing vocabulary mastery, report quality scores, and checkpoint performance over time. The upward trend is the motivator.
 - **The AP Scorecard:** Four gauges (Physics, Chemistry, Biology, Environmental Science) showing the current estimated AP score. The target line is a 3 (qualifying score).
 - **The Portfolio:** A chronological list of all research reports with quality ratings. The student can see their first report next to their latest and observe their own growth.

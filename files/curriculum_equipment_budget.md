@@ -1,8 +1,8 @@
 # Curriculum Equipment Budget
 
 **Budget Target:** $5,000
-**Estimated Total:** $3,228
-**Remaining Budget:** $1,772
+**Estimated Total:** $3,296–3,326 (including Health Science additions)
+**Remaining Budget:** $1,674–1,704
 
 ---
 
@@ -108,6 +108,24 @@
 
 ---
 
+## Health Science Equipment — $68–98
+
+Most Health Science modules use equipment already in the $5K budget (calorimeter from C14, heart rate monitor from B7, pH meter from C1, precision scale from C11, agar plates from B2). The following additions are needed:
+
+| Item | Est. Cost | Qty | Subtotal | What It Upgrades | Modules Used |
+|---|---|---|---|---|---|
+| Blood glucose monitor (glucometer) | $15–25 | 1 | $15–25 | No equivalent | H4, AH1, AH4 |
+| Glucose test strips (50-pack) | $15 | 1 | $15 | No equivalent | H4, AH1, AH4 |
+| DCPIP solution (100mL) | $8 | 1 | $8 | No equivalent | H5 |
+| Oil-blotting papers (200 sheets) | $5 | 1 | $5 | No equivalent | H10, AH4 |
+| Hand dynamometer (if not already purchased) | $25 | 1 | $25 | No equivalent (or shared from AB2) | H7, AH3 |
+| Galvanic skin response sensor (optional) | $20 | 1 | $20 | No equivalent | H11 |
+| **Total** | | | **$68–98** | | |
+
+This fits comfortably within the remaining budget reserve.
+
+---
+
 ## Equipment by Module
 
 | Module | Concept | Equipment Used (Upgraded) | Est. Equipment Cost |
@@ -174,3 +192,21 @@
 | AE2 | Natural hazards and engineering | Shake table, building materials (popsicle sticks, clay, rubber bands) | $55 |
 | AE3 | Earth's resources and human impact | Calculator, research materials — minimal equipment | $5 |
 | AE4 | Deep space and cosmology | Telescope, calculator, galaxy recession data (printed) | $250 (shared) |
+| H1 | Macronutrients and energy | Calorimeter (from C14), precision scale, thermometer/temperature probe, foods, nutrition labels | $5–8 (shared) |
+| H2 | Digestion and enzymes | Benedict's solution, test tubes, hot water bath, thermometer, crackers, starch solution | $8–10 |
+| H3 | Protein, muscle, and diet planning | Nutrition labels, calculator — no lab equipment needed | $0 |
+| H4 | Blood sugar and glycemic response | Glucometer, test strips, foods (bread, apple, cheese), timer | $20–30 |
+| H5 | Micronutrients and deficiency | DCPIP solution, droppers, test tubes, juices, vitamin C tablet, hot plate | $10–15 |
+| H6 | Exercise and the cardiovascular system | Heart rate monitor (from B7), stopwatch, space to exercise | $0 (shared) |
+| H7 | Strength training and muscle adaptation | Hand dynamometer, stopwatch, measuring tape, wall for jump height | $25 |
+| H8 | Dopamine, screens, and sustained attention | Phone/tablet, printed reading passages, digit span cards, stopwatch | $0 |
+| H9 | Sleep and circadian biology | Ruler (from B12), pen and paper, phone for timing | $0 |
+| H10 | Skin, sebum, and acne | Oil-blotting papers, food diary template, camera (optional) | $5 |
+| H11 | Stress physiology | Heart rate monitor (from B7), stopwatch, galvanic skin response sensor (optional) | $0–20 (shared) |
+| H12 | Appearance, energy, and the integrated system | All prior lab notebooks and data, calculator, graph paper | $0 |
+| H13 | Self-directed health experiment | Depends on student's chosen experiment — budget up to $15 | $0–15 |
+| AH1 | Metabolism and metabolic rate | Calculator, measuring tape, scale, printed MET table, food diary | $0 |
+| AH2 | Gut microbiome and digestion | Agar plates (from B2), fermented foods, pH meter (from C1), thermometer | $10–15 (shared) |
+| AH3 | Training programming and adaptation | Dynamometer, stopwatch, measuring tape, training log | $0 (shared) |
+| AH4 | Nutrition, inflammation, and skin | Oil-blotting papers, food diary, glucometer (from H4), omega-3 foods | $15–25 |
+| AH5 | Building a personal protocol | All prior data, lab notebooks, training log, food diary, calculator | $0 |
