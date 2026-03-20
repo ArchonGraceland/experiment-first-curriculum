@@ -435,7 +435,7 @@
 
   <header>
     <h1>Experiment-First Science Curriculum</h1>
-    <div class="subtitle">Project Hub · High School Physics, Chemistry, Biology, Earth &amp; Space, Health Science · v0.2</div>
+    <div class="subtitle">Project Hub · High School Physics, Chemistry, Biology, Earth &amp; Space, Health Science · v0.3</div>
   </header>
 
   <!-- STATUS -->
@@ -448,9 +448,10 @@
         <li>Curriculum design specification (v0.2)<span class="detail">80 modules across 5 domains (4 NGSS + Health Science), two-year timeline, scaffolding model, language policy</span></li>
         <li>Assessment system specification (v0.2)<span class="detail">3-layer model: reports → checkpoints → AP benchmarks, Health Science integrated</span></li>
         <li>Health Science strand specification (v0.2)<span class="detail">18 modules — self-improvement through science: nutrition, exercise, sleep, screens, skin, stress, personal protocol</span></li>
-        <li>Module C2 — student module<span class="detail">Fruit battery experiment, 8 steps, 5 terms, challenge mode</span></li>
-        <li>Module C2 — instructor guide<span class="detail">Setup, timing, facilitation, troubleshooting, expected results, report coaching</span></li>
-        <li>Module C2 — lab notebook worksheet<span class="detail">Printable worksheet with data table, sketch area, prediction &amp; reflection prompts</span></li>
+        <li>Module C2 — tested with student, revised to v2<span class="detail">19-step experiment (was 8), fine-grained actions, real-world hook, no challenge mode, matched hook/framework pair</span></li>
+        <li>Module C2 — instructor guide v2<span class="detail">Updated timing, step references, troubleshooting to match 19-step student guide</span></li>
+        <li>Module C2 — lab notebook v2<span class="detail">Matches 19-step format, challenge mode removed, reflection prompts use key terminology</span></li>
+        <li>Module building guide<span class="detail">Lessons learned from C2 testing — step design rules, hook/framework pairing, sidebar policy, template rules</span></li>
         <li>Research report tool — deployed<span class="detail">Next.js on Vercel with AI feedback layer (Claude Sonnet)</span></li>
         <li>AI feedback system — designed &amp; implemented<span class="detail">Questions-only feedback, 4-phase scaffolding, terminology hints, first-draft snapshots</span></li>
       </ul>
@@ -459,10 +460,10 @@
     <div class="status-group">
       <div class="status-group-label next">Next Up</div>
       <ul class="status-list next">
-        <li>Test C2 with student<span class="detail">Observe, don't instruct — note stalls, skips, and loss of interest</span></li>
-        <li>Build H1 (Macronutrients and Energy)<span class="detail">First Health Science proof-of-concept module using C2 as template</span></li>
-        <li>Build H3 (Protein and Diet Planning) and H7 (Strength Training)<span class="detail">Key novel modules — most central to the self-improvement framing</span></li>
-        <li>Build modules C1, P1, B1<span class="detail">Three Tier 1 entry points using C2 as template</span></li>
+        <li>Build H1 (Macronutrients and Energy)<span class="detail">First Health Science module using C2 v2 as template</span></li>
+        <li>Build P1 (first Physics module)<span class="detail">Tier 1 entry point using C2 v2 as template</span></li>
+        <li>Build B1 (first Biology module)<span class="detail">Tier 1 entry point using C2 v2 as template</span></li>
+        <li>Fix AI feedback tool<span class="detail">Feedback must be experiment-aware — reference specific data, never make correct answers feel wrong</span></li>
         <li>Make report tool module-agnostic<span class="detail">Load module data from config instead of hardcoded C2 content</span></li>
       </ul>
     </div>
@@ -471,6 +472,7 @@
       <div class="status-group-label future">Future</div>
       <ul class="status-list future">
         <li>Build H8 (Screens and Attention) module<span class="detail">Highest-impact module for ADHD learner — measures attentional cost of short-form video</span></li>
+        <li>Build H3 (Protein and Diet Planning) and H7 (Strength Training)<span class="detail">Key novel modules — most central to the self-improvement framing</span></li>
         <li>Save/load report progress<span class="detail">Currently lost on page refresh</span></li>
         <li>Export finished reports as PDF</li>
         <li>Portfolio view — all completed reports</li>
@@ -533,6 +535,17 @@
             <a href="files/health_science_strand.md" download>Download</a>
           </div>
         </div>
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Module Building Guide</div>
+            <div class="file-desc">Lessons learned from C2 testing — step design rules, hook/framework pairing, sidebar policy, template rules for all modules</div>
+          </div>
+          <span class="file-tag spec">Spec</span>
+          <div class="btn-group">
+            <button onclick="openViewer('files/module_building_guide.md', 'Module Building Guide')">Open</button>
+            <a href="files/module_building_guide.md" download>Download</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -541,35 +554,35 @@
       <div class="file-grid">
         <div class="file-card">
           <div class="file-info">
-            <div class="file-name">Student Module</div>
-            <div class="file-desc">Experiment procedure, terminology, challenge mode, glossary entries, report prompts</div>
+            <div class="file-name">Student Guide</div>
+            <div class="file-desc">19-step experiment procedure, terminology, glossary entries, report prompts (v2 — revised from testing)</div>
           </div>
           <span class="file-tag student">Student</span>
           <div class="btn-group">
-            <button onclick="openViewer('files/module_c2.md', 'Module C2 — Student Module')">Open</button>
-            <a href="files/module_c2.md" download>Download</a>
+            <button onclick="openViewer('files/c2_student_guide_v2.md', 'Module C2 — Student Guide v2')">Open</button>
+            <a href="files/c2_student_guide_v2.md" download>Download</a>
           </div>
         </div>
         <div class="file-card">
           <div class="file-info">
             <div class="file-name">Instructor Guide</div>
-            <div class="file-desc">Setup, timing, facilitation rules, expected results, report coaching, troubleshooting</div>
+            <div class="file-desc">Setup, timing (19-step), facilitation rules, expected results, report coaching, troubleshooting (v2)</div>
           </div>
           <span class="file-tag instructor">Instructor</span>
           <div class="btn-group">
-            <button onclick="openViewer('files/c2_instructor_guide.md', 'Module C2 — Instructor Guide')">Open</button>
-            <a href="files/c2_instructor_guide.md" download>Download</a>
+            <button onclick="openViewer('files/c2_instructor_guide_v2.md', 'Module C2 — Instructor Guide v2')">Open</button>
+            <a href="files/c2_instructor_guide_v2.md" download>Download</a>
           </div>
         </div>
         <div class="file-card">
           <div class="file-info">
             <div class="file-name">Lab Notebook Worksheet</div>
-            <div class="file-desc">Printable PDF — prediction, data table, circuit sketch, reflection prompts</div>
+            <div class="file-desc">Printable worksheet — prediction, data table, circuit sketch, reflection prompts (v2 — matches 19-step format)</div>
           </div>
           <span class="file-tag student">Student</span>
           <div class="btn-group">
-            <a href="files/c2_lab_notebook.pdf" target="_blank">Open</a>
-            <a href="files/c2_lab_notebook.pdf" download>Download</a>
+            <button onclick="openViewer('files/c2_lab_notebook_v2.md', 'Module C2 — Lab Notebook v2')">Open</button>
+            <a href="files/c2_lab_notebook_v2.md" download>Download</a>
           </div>
         </div>
       </div>
@@ -592,7 +605,7 @@
   </section>
 
   <footer>
-    Experiment-First Science Curriculum · v0.2 · March 2026
+    Experiment-First Science Curriculum · v0.3 · March 2026
   </footer>
 
 </div>
