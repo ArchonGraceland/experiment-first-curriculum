@@ -66,6 +66,9 @@ main { padding: 24px 32px 48px; }
 .term-badge { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; }
 @media (max-width: 900px) { .domain-grid { grid-template-columns: repeat(3, 1fr); } .module-grid { grid-template-columns: 1fr 1fr; } .seq-row { grid-template-columns: 40px 1fr; } .seq-row > :nth-child(3) { display: none; } }
 @media (max-width: 600px) { .domain-grid { grid-template-columns: 1fr 1fr; } .module-grid { grid-template-columns: 1fr; } main { padding: 16px; } }
+.file-links { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+.file-link { font-size: 10px; padding: 2px 8px; border-radius: 4px; background: #f1f5f9; color: #475569; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.04em; transition: background 0.15s; }
+.file-link:hover { background: #e2e8f0; }
 .loading { display: flex; align-items: center; justify-content: center; height: 100vh; font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #64748b; }
 </style>
 </head>
@@ -203,6 +206,11 @@ function renderModules(filtered) {
             <span>${m.estimated_minutes} min</span>
             ${deps.length ? `<span>← ${deps.join(", ")}</span>` : ""}
           </div>
+          ${m.student_guide_url || m.instructor_guide_url || m.lab_notebook_url ? `<div class="file-links">
+            ${m.student_guide_url ? `<a class="file-link" href="${m.student_guide_url}" target="_blank">Student Guide</a>` : ''}
+            ${m.instructor_guide_url ? `<a class="file-link" href="${m.instructor_guide_url}" target="_blank">Instructor Guide</a>` : ''}
+            ${m.lab_notebook_url ? `<a class="file-link" href="${m.lab_notebook_url}" target="_blank">Lab Notebook</a>` : ''}
+          </div>` : ''}
         </div>`;
       }).join("")}</div>
     </div>`).join("");
