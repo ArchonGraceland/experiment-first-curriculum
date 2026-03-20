@@ -215,6 +215,7 @@
   .file-tag.spec { background: var(--slate-bg); color: var(--slate); }
   .file-tag.student { background: var(--green-bg); color: var(--green); }
   .file-tag.instructor { background: var(--amber-bg); color: var(--amber); }
+  .file-tag.worksheet { background: #f0eaff; color: #6b5ba7; }
 
   /* Links section */
   .links-row {
@@ -435,7 +436,7 @@
 
   <header>
     <h1>Experiment-First Science Curriculum</h1>
-    <div class="subtitle">Project Hub · High School Physics, Chemistry, Biology, Earth &amp; Space, Health Science · v0.3</div>
+    <div class="subtitle">Project Hub · High School Physics, Chemistry, Biology, Earth &amp; Space, Health Science · v0.4</div>
   </header>
 
   <!-- STATUS -->
@@ -448,10 +449,15 @@
         <li>Curriculum design specification (v0.2)<span class="detail">80 modules across 5 domains (4 NGSS + Health Science), two-year timeline, scaffolding model, language policy</span></li>
         <li>Assessment system specification (v0.2)<span class="detail">3-layer model: reports → checkpoints → AP benchmarks, Health Science integrated</span></li>
         <li>Health Science strand specification (v0.2)<span class="detail">18 modules — self-improvement through science: nutrition, exercise, sleep, screens, skin, stress, personal protocol</span></li>
-        <li>Module C2 — tested with student, revised to v2<span class="detail">19-step experiment (was 8), fine-grained actions, real-world hook, no challenge mode, matched hook/framework pair</span></li>
+        <li>Module C2 — tested with student, revised to v2<span class="detail">19-step experiment (was 8 in v1), fine-grained actions, real-world hook, no challenge mode, matched hook/framework pair</span></li>
         <li>Module C2 — instructor guide v2<span class="detail">Updated timing, step references, troubleshooting to match 19-step student guide</span></li>
         <li>Module C2 — lab notebook v2<span class="detail">Matches 19-step format, challenge mode removed, reflection prompts use key terminology</span></li>
-        <li>Module building guide<span class="detail">Lessons learned from C2 testing — step design rules, hook/framework pairing, sidebar policy, template rules</span></li>
+        <li>Module building guide<span class="detail">Lessons learned from C2 testing — step design rules, hook/framework pairing, sidebar policy, template rules for all future modules</span></li>
+        <li>Module H1 — Macronutrients and Energy (drafted)<span class="detail">First Health Science module. Burn foods in Eisco calorimeter, calculate energy per gram, compare to nutrition labels. 20 steps, 6 terms.</span></li>
+        <li>Module P1 — Forces and Motion (drafted)<span class="detail">First Physics module. Simultaneous drop tests, phone accelerometer, F=ma. 14 steps, 5 terms.</span></li>
+        <li>Module B1 — Cells (drafted)<span class="detail">First Biology module. Cheek cell + onion cell microscopy, plant vs animal comparison. 18 steps, 6 terms.</span></li>
+        <li>Supabase curriculum database<span class="detail">80 modules seeded, 22 terms catalogued for 4 built modules, prerequisite graph, 25-week sequence, build log, file URLs, RLS enabled</span></li>
+        <li>Curriculum dashboard — live<span class="detail">5 tabs: Build Pipeline, Module Map, Terminology tracker, Sequence view, Build Log. Pulls from Supabase.</span></li>
         <li>Research report tool — deployed<span class="detail">Next.js on Vercel with AI feedback layer (Claude Sonnet)</span></li>
         <li>AI feedback system — designed &amp; implemented<span class="detail">Questions-only feedback, 4-phase scaffolding, terminology hints, first-draft snapshots</span></li>
       </ul>
@@ -460,25 +466,23 @@
     <div class="status-group">
       <div class="status-group-label next">Next Up</div>
       <ul class="status-list next">
-        <li>Build H1 (Macronutrients and Energy)<span class="detail">First Health Science module using C2 v2 as template</span></li>
-        <li>Build P1 (first Physics module)<span class="detail">Tier 1 entry point using C2 v2 as template</span></li>
-        <li>Build B1 (first Biology module)<span class="detail">Tier 1 entry point using C2 v2 as template</span></li>
-        <li>Fix AI feedback tool<span class="detail">Feedback must be experiment-aware — reference specific data, never make correct answers feel wrong</span></li>
-        <li>Make report tool module-agnostic<span class="detail">Load module data from config instead of hardcoded C2 content</span></li>
+        <li>Test H1, P1, B1 with student<span class="detail">Observe, note stalls, revise using module building guide — same process that produced C2 v2</span></li>
+        <li>Build C1 (Acids and Bases)<span class="detail">Remaining Tier 1 Chemistry entry point</span></li>
+        <li>Build E1 (Minerals and Rocks)<span class="detail">First Earth &amp; Space module — completes Tier 1 across all 5 domains</span></li>
+        <li>Make report tool module-agnostic<span class="detail">Load module data from Supabase config instead of hardcoded C2 content</span></li>
+        <li>Update C2 on the hub to v2<span class="detail">Current site still serves v1 files — replace with tested v2 versions</span></li>
       </ul>
     </div>
 
     <div class="status-group">
       <div class="status-group-label future">Future</div>
       <ul class="status-list future">
-        <li>Build H8 (Screens and Attention) module<span class="detail">Highest-impact module for ADHD learner — measures attentional cost of short-form video</span></li>
-        <li>Build H3 (Protein and Diet Planning) and H7 (Strength Training)<span class="detail">Key novel modules — most central to the self-improvement framing</span></li>
+        <li>Build remaining Tier 1 modules (H2, H3, P2, P3, B2, B3, E2)<span class="detail">Complete the foundational entry points across all domains</span></li>
+        <li>Build H8 (Screens and Attention)<span class="detail">Highest-impact module for ADHD learner — measures attentional cost of short-form video</span></li>
+        <li>Checkpoint 1 question bank (modules 1–12)</li>
         <li>Save/load report progress<span class="detail">Currently lost on page refresh</span></li>
         <li>Export finished reports as PDF</li>
         <li>Portfolio view — all completed reports</li>
-        <li>Progress tracking dashboard</li>
-        <li>Build remaining modules: Tier 1 → Tier 2 → Tier 3</li>
-        <li>Checkpoint 1 question bank (modules 1–12)</li>
         <li>Source AP released questions for first benchmark</li>
       </ul>
     </div>
@@ -587,6 +591,123 @@
         </div>
       </div>
     </div>
+
+    <div class="file-group">
+      <h3>Module H1 — How Much Energy Is in Your Snack?</h3>
+      <div class="file-grid">
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Student Guide</div>
+            <div class="file-desc">20-step calorimetry experiment with Eisco kit, 6 terms, nutrition label comparison (drafted)</div>
+          </div>
+          <span class="file-tag student">Student</span>
+          <div class="btn-group">
+            <button onclick="openViewer('files/h1_student_guide.md', 'Module H1 — Student Guide')">Open</button>
+            <a href="files/h1_student_guide.md" download>Download</a>
+          </div>
+        </div>
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Instructor Guide</div>
+            <div class="file-desc">Setup, timing (35–45 min), Eisco calorimeter notes, facilitation, troubleshooting</div>
+          </div>
+          <span class="file-tag instructor">Instructor</span>
+          <div class="btn-group">
+            <button onclick="openViewer('files/h1_instructor_guide.md', 'Module H1 — Instructor Guide')">Open</button>
+            <a href="files/h1_instructor_guide.md" download>Download</a>
+          </div>
+        </div>
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Lab Notebook Worksheet</div>
+            <div class="file-desc">Prediction, data table, energy calculation space, nutrition label comparison, reflection</div>
+          </div>
+          <span class="file-tag student">Student</span>
+          <div class="btn-group">
+            <button onclick="openViewer('files/h1_lab_notebook.md', 'Module H1 — Lab Notebook')">Open</button>
+            <a href="files/h1_lab_notebook.md" download>Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="file-group">
+      <h3>Module P1 — What Happens When You Drop Things?</h3>
+      <div class="file-grid">
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Student Guide</div>
+            <div class="file-desc">14-step drop test and accelerometer experiment, 5 terms, F=ma (drafted)</div>
+          </div>
+          <span class="file-tag student">Student</span>
+          <div class="btn-group">
+            <button onclick="openViewer('files/p1_student_guide.md', 'Module P1 — Student Guide')">Open</button>
+            <a href="files/p1_student_guide.md" download>Download</a>
+          </div>
+        </div>
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Instructor Guide</div>
+            <div class="file-desc">Setup, timing, drop test logistics, accelerometer app guidance, troubleshooting</div>
+          </div>
+          <span class="file-tag instructor">Instructor</span>
+          <div class="btn-group">
+            <button onclick="openViewer('files/p1_instructor_guide.md', 'Module P1 — Instructor Guide')">Open</button>
+            <a href="files/p1_instructor_guide.md" download>Download</a>
+          </div>
+        </div>
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Lab Notebook Worksheet</div>
+            <div class="file-desc">Prediction, drop timing data table, accelerometer readings, sketch space, reflection</div>
+          </div>
+          <span class="file-tag student">Student</span>
+          <div class="btn-group">
+            <button onclick="openViewer('files/p1_lab_notebook.md', 'Module P1 — Lab Notebook')">Open</button>
+            <a href="files/p1_lab_notebook.md" download>Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="file-group">
+      <h3>Module B1 — What Do Your Cells Look Like?</h3>
+      <div class="file-grid">
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Student Guide</div>
+            <div class="file-desc">18-step microscopy experiment, cheek cell + onion cell comparison, 6 terms (drafted)</div>
+          </div>
+          <span class="file-tag student">Student</span>
+          <div class="btn-group">
+            <button onclick="openViewer('files/b1_student_guide.md', 'Module B1 — Student Guide')">Open</button>
+            <a href="files/b1_student_guide.md" download>Download</a>
+          </div>
+        </div>
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Instructor Guide</div>
+            <div class="file-desc">Microscope setup, staining technique, timing, expected images, troubleshooting</div>
+          </div>
+          <span class="file-tag instructor">Instructor</span>
+          <div class="btn-group">
+            <button onclick="openViewer('files/b1_instructor_guide.md', 'Module B1 — Instructor Guide')">Open</button>
+            <a href="files/b1_instructor_guide.md" download>Download</a>
+          </div>
+        </div>
+        <div class="file-card">
+          <div class="file-info">
+            <div class="file-name">Lab Notebook Worksheet</div>
+            <div class="file-desc">Prediction, labeled sketch areas for both cell types, comparison table, reflection</div>
+          </div>
+          <span class="file-tag student">Student</span>
+          <div class="btn-group">
+            <button onclick="openViewer('files/b1_lab_notebook.md', 'Module B1 — Lab Notebook')">Open</button>
+            <a href="files/b1_lab_notebook.md" download>Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- TOOLS -->
@@ -597,6 +718,10 @@
         <div class="link-title">Research Report Tool</div>
         <div class="link-url">research-report-tool.vercel.app</div>
       </a>
+      <a href="dashboard.html" class="link-card">
+        <div class="link-title">Curriculum Dashboard</div>
+        <div class="link-url">Build pipeline, module map, terminology, sequence, build log</div>
+      </a>
       <a href="https://github.com/ArchonGraceland/research-report-tool" target="_blank" rel="noopener" class="link-card">
         <div class="link-title">GitHub Repository</div>
         <div class="link-url">github.com/ArchonGraceland/research-report-tool</div>
@@ -605,7 +730,7 @@
   </section>
 
   <footer>
-    Experiment-First Science Curriculum · v0.3 · March 2026
+    Experiment-First Science Curriculum · v0.4 · March 2026
   </footer>
 
 </div>
