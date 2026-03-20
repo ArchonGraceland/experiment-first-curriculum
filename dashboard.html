@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experiment-First Curriculum · Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Barlow', 'Helvetica Neue', sans-serif; background: #fafaf8; color: #1e293b; -webkit-font-smoothing: antialiased; }
+button { cursor: pointer; font-family: inherit; }
+table { border-collapse: collapse; border-spacing: 0; }
+.header { background: #1a1a2e; color: #f8fafc; padding: 24px 32px; border-bottom: 3px solid #c9a959; }
+.header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; letter-spacing: 0.02em; }
+.header p { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+.wrap { max-width: 1200px; margin: 0 auto; }
+nav { background: #fff; border-bottom: 1px solid #e2e8f0; }
+nav .tabs { display: flex; gap: 0; }
+nav button { padding: 12px 20px; font-size: 13px; font-weight: 500; color: #64748b; background: transparent; border: none; border-bottom: 2px solid transparent; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 0.08em; transition: all 0.15s; }
+nav button.active { font-weight: 700; color: #1a1a2e; border-bottom-color: #c9a959; }
+main { padding: 24px 32px 48px; }
+.card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; margin-bottom: 20px; }
+.progress-bar { display: flex; height: 28px; border-radius: 6px; overflow: hidden; background: #f1f5f9; }
+.legend { display: flex; gap: 16px; margin-top: 12px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #64748b; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+.domain-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 20px; }
+.domain-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; }
+.domain-label { font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; font-family: 'Barlow Condensed', sans-serif; }
+.domain-num { font-size: 28px; font-weight: 700; margin-top: 4px; }
+.domain-num span { font-size: 14px; color: #94a3b8; font-weight: 400; }
+.activity-row { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
+.activity-row:last-child { border-bottom: none; }
+.activity-event { font-size: 12px; font-weight: 700; min-width: 70px; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.activity-module { font-size: 13px; font-weight: 600; min-width: 36px; }
+.activity-notes { font-size: 13px; color: #475569; flex: 1; }
+.activity-date { font-size: 11px; color: #94a3b8; white-space: nowrap; }
+.filter-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.pill { padding: 5px 14px; font-size: 12px; font-weight: 500; border-radius: 20px; border: 1.5px solid #e2e8f0; background: transparent; color: #64748b; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.04em; transition: all 0.15s; }
+.pill.active { font-weight: 700; }
+.tier-group { margin-bottom: 28px; }
+.tier-label { font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Barlow Condensed', sans-serif; margin: 0 0 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; }
+.module-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.module-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px 14px; border-left-width: 3px; border-left-style: solid; }
+.module-card.dimmed { opacity: 0.6; }
+.module-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.module-id { font-size: 14px; font-weight: 700; }
+.status-badge { font-size: 10px; padding: 2px 7px; border-radius: 10px; font-weight: 600; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.module-title { font-size: 12px; color: #334155; line-height: 1.4; margin-bottom: 6px; }
+.module-meta { display: flex; gap: 8px; font-size: 10px; color: #94a3b8; }
+.seq-grid { display: grid; gap: 6px; }
+.seq-row { display: grid; grid-template-columns: 56px 1fr 1fr; gap: 8px; align-items: stretch; }
+.seq-week { display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #94a3b8; font-family: 'Barlow Condensed', sans-serif; }
+.seq-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; border-left-width: 3px; border-left-style: solid; }
+.seq-card.dimmed { opacity: 0.55; }
+.seq-card-top { display: flex; justify-content: space-between; align-items: center; }
+.seq-card-id { font-size: 13px; font-weight: 700; }
+.seq-card-status { font-size: 9px; font-weight: 700; }
+.seq-card-title { font-size: 11px; color: #475569; margin-top: 3px; line-height: 1.3; }
+.seq-card-domain { font-size: 10px; margin-top: 4px; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; }
+.tbl { width: 100%; font-size: 13px; }
+.tbl th { text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; font-family: 'Barlow Condensed', sans-serif; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+.tbl td { padding: 10px 14px; vertical-align: top; border-bottom: 1px solid #f1f5f9; }
+.term-badge { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+@media (max-width: 900px) { .domain-grid { grid-template-columns: repeat(3, 1fr); } .module-grid { grid-template-columns: 1fr 1fr; } .seq-row { grid-template-columns: 40px 1fr; } .seq-row > :nth-child(3) { display: none; } }
+@media (max-width: 600px) { .domain-grid { grid-template-columns: 1fr 1fr; } .module-grid { grid-template-columns: 1fr; } main { padding: 16px; } }
+.loading { display: flex; align-items: center; justify-content: center; height: 100vh; font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #64748b; }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+// ─── Config ──────────────────────────────────────────────────
+const SB_URL = "https://bjdkydgeanjbviksomkf.supabase.co";
+const SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqZGt5ZGdlYW5qYnZpa3NvbWtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwNDExNDAsImV4cCI6MjA4OTYxNzE0MH0.Q8Wa6YsGzsr1jEZQybcn4AqemEGs6VJIkTckUE88C4A";
+
+async function q(table, params = "") {
+  const r = await fetch(`${SB_URL}/rest/v1/${table}?${params}`, { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` } });
+  return r.json();
+}
+
+const DOMAINS = [
+  { key: "physics", label: "Physics", color: "#2563eb", bg: "#dbeafe" },
+  { key: "chemistry", label: "Chemistry", color: "#9333ea", bg: "#f3e8ff" },
+  { key: "biology", label: "Biology", color: "#16a34a", bg: "#dcfce7" },
+  { key: "earth_space", label: "Earth & Space", color: "#ca8a04", bg: "#fef9c3" },
+  { key: "health_science", label: "Health Science", color: "#dc2626", bg: "#fee2e2" },
+];
+const domMap = Object.fromEntries(DOMAINS.map(d => [d.key, d]));
+
+const ST = {
+  planned:  { label: "Planned",  color: "#94a3b8", bg: "#f1f5f9", icon: "○" },
+  drafted:  { label: "Drafted",  color: "#f59e0b", bg: "#fef3c7", icon: "◐" },
+  tested:   { label: "Tested",   color: "#3b82f6", bg: "#dbeafe", icon: "◑" },
+  revised:  { label: "Revised",  color: "#8b5cf6", bg: "#ede9fe", icon: "◕" },
+  deployed: { label: "Deployed", color: "#22c55e", bg: "#dcfce7", icon: "●" },
+};
+
+const TIERS = { "1": "Tier 1 — Entry", "2": "Tier 2 — Builds", "3": "Tier 3 — Advanced" };
+
+// ─── State ───────────────────────────────────────────────────
+let state = { modules: [], terms: [], prereqs: [], log: [], seq: [], tab: "overview", filter: "all", loading: true };
+
+// ─── Render ──────────────────────────────────────────────────
+function render() {
+  const app = document.getElementById("app");
+  if (state.loading) { app.innerHTML = '<div class="loading">Loading curriculum data…</div>'; return; }
+
+  const total = state.modules.length;
+  const byStatus = {};
+  Object.keys(ST).forEach(s => byStatus[s] = state.modules.filter(m => m.status === s).length);
+  const built = total - (byStatus.planned || 0);
+
+  const filtered = state.filter === "all" ? state.modules : state.modules.filter(m => m.domain === state.filter);
+
+  app.innerHTML = `
+    <header class="header"><div class="wrap">
+      <h1>Experiment-First Curriculum</h1>
+      <p>${total} Modules · ${built} Built · ${state.terms.length} Terms Catalogued</p>
+    </div></header>
+    <nav><div class="wrap"><div class="tabs">
+      ${["overview|Build Pipeline", "modules|Module Map", "terms|Terminology", "sequence|Sequence", "log|Build Log"].map(t => {
+        const [id, label] = t.split("|");
+        return `<button class="${state.tab === id ? 'active' : ''}" onclick="setTab('${id}')">${label}</button>`;
+      }).join("")}
+    </div></div></nav>
+    <main class="wrap">
+      ${state.tab === "overview" ? renderPipeline(total, byStatus, built) : ""}
+      ${state.tab === "modules" ? renderModules(filtered) : ""}
+      ${state.tab === "terms" ? renderTerms() : ""}
+      ${state.tab === "sequence" ? renderSequence() : ""}
+      ${state.tab === "log" ? renderLog() : ""}
+    </main>`;
+}
+
+function renderPipeline(total, byStatus, built) {
+  const pct = n => ((n / total) * 100).toFixed(1);
+  const order = ["deployed", "revised", "tested", "drafted"];
+  return `
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;margin-bottom:12px">
+        <span style="font-size:14px;font-weight:600">Build Progress</span>
+        <span style="font-size:14px;color:#64748b">${built} / ${total} modules</span>
+      </div>
+      <div class="progress-bar">${order.map(s => {
+        const w = pct(byStatus[s] || 0);
+        return w === "0.0" ? "" : `<div style="width:${w}%;background:${ST[s].color}"></div>`;
+      }).join("")}</div>
+      <div class="legend">${["deployed","revised","tested","drafted","planned"].map(s =>
+        `<div class="legend-item"><span class="legend-dot" style="background:${ST[s].color}"></span>${ST[s].label}: ${byStatus[s]||0}</div>`
+      ).join("")}</div>
+    </div>
+    <div class="domain-grid">${DOMAINS.map(d => {
+      const dm = state.modules.filter(m => m.domain === d.key);
+      const b = dm.filter(m => m.status !== "planned").length;
+      return `<div class="domain-card" style="border-top:3px solid ${d.color}">
+        <div class="domain-label">${d.label}</div>
+        <div class="domain-num">${b}<span>/${dm.length}</span></div>
+      </div>`;
+    }).join("")}</div>
+    <div class="card"><h3 style="margin:0 0 16px;font-size:14px;font-weight:600">Recent Activity</h3>
+      ${state.log.slice(0, 8).map(e => `<div class="activity-row">
+        <span class="activity-event" style="color:${ST[e.event]?.color||'#64748b'}">${e.event}</span>
+        <span class="activity-module">${e.module_id}</span>
+        <span class="activity-notes">${(e.notes||"").substring(0, 140)}${(e.notes||"").length > 140 ? "…" : ""}</span>
+        <span class="activity-date">${new Date(e.created_at).toLocaleDateString()}</span>
+      </div>`).join("")}
+    </div>`;
+}
+
+function filterBar(showCounts) {
+  return `<div class="filter-bar">
+    <button class="pill ${state.filter==='all'?'active':''}" style="${state.filter==='all'?'border-color:#475569;background:#47556912;color:#475569':''}" onclick="setFilter('all')">All${showCounts ? ` (${state.terms.length})` : ''}</button>
+    ${DOMAINS.map(d => {
+      const active = state.filter === d.key;
+      const count = showCounts ? state.terms.filter(t => state.modules.find(m => m.id === t.introduced_in)?.domain === d.key).length : 0;
+      if (showCounts && count === 0) return '';
+      return `<button class="pill ${active?'active':''}" style="${active?`border-color:${d.color};background:${d.color}12;color:${d.color}`:''}" onclick="setFilter('${d.key}')">${d.label}${showCounts ? ` (${count})` : ''}</button>`;
+    }).join("")}
+  </div>`;
+}
+
+function renderModules(filtered) {
+  const grouped = { "1": [], "2": [], "3": [] };
+  filtered.forEach(m => grouped[m.tier]?.push(m));
+  return filterBar(false) + ["1","2","3"].map(tier => `
+    <div class="tier-group">
+      <h3 class="tier-label">${TIERS[tier]} (${grouped[tier].length} modules)</h3>
+      <div class="module-grid">${grouped[tier].map(m => {
+        const d = domMap[m.domain] || {};
+        const s = ST[m.status] || ST.planned;
+        const deps = state.prereqs.filter(p => p.module_id === m.id).map(p => p.requires_module_id);
+        return `<div class="module-card ${m.status==='planned'?'dimmed':''}" style="border-left-color:${d.color||'#ccc'}">
+          <div class="module-top">
+            <span class="module-id">${m.id}</span>
+            <span class="status-badge" style="background:${s.bg};color:${s.color}">${s.icon} ${s.label}</span>
+          </div>
+          <div class="module-title">${m.title}</div>
+          <div class="module-meta">
+            <span>${m.term_count} terms</span>
+            <span>${m.estimated_minutes} min</span>
+            ${deps.length ? `<span>← ${deps.join(", ")}</span>` : ""}
+          </div>
+        </div>`;
+      }).join("")}</div>
+    </div>`).join("");
+}
+
+function renderTerms() {
+  const enriched = state.terms.map(t => {
+    const mod = state.modules.find(m => m.id === t.introduced_in);
+    return { ...t, domain: mod?.domain };
+  }).filter(t => state.filter === "all" || t.domain === state.filter);
+  return filterBar(true) + `
+    <div class="card" style="padding:0;overflow-x:auto">
+      <table class="tbl"><thead><tr>
+        <th>Term</th><th>Module</th><th>Definition</th><th>Observed When</th><th>Connects To</th>
+      </tr></thead><tbody>${enriched.map(t => {
+        const d = domMap[t.domain] || {};
+        return `<tr>
+          <td style="font-weight:700">${t.term}</td>
+          <td><span class="term-badge" style="background:${d.bg||'#f1f5f9'};color:${d.color||'#475569'}">${t.introduced_in}</span></td>
+          <td style="max-width:260px;color:#475569">${(t.definition||"").substring(0, 100)}${(t.definition||"").length > 100 ? "…" : ""}</td>
+          <td style="max-width:200px;color:#64748b;font-size:12px">${(t.observation_anchor||"").substring(0, 80)}${(t.observation_anchor||"").length > 80 ? "…" : ""}</td>
+          <td style="font-size:11px;color:#94a3b8">${(t.connected_to||[]).join(", ")}</td>
+        </tr>`;
+      }).join("")}</tbody></table>
+    </div>`;
+}
+
+function renderSequence() {
+  const weeks = {};
+  state.seq.forEach(s => {
+    if (!weeks[s.week]) weeks[s.week] = [];
+    const mod = state.modules.find(m => m.id === s.module_id);
+    weeks[s.week].push({ ...s, mod });
+  });
+  const sorted = Object.entries(weeks).sort((a, b) => a[0] - b[0]);
+  return `<p style="font-size:13px;color:#64748b;margin-bottom:20px">25-week suggested sequence · 2 modules per week · Interleaved across all 5 domains</p>
+    <div class="seq-grid">${sorted.map(([week, slots]) => `
+      <div class="seq-row">
+        <div class="seq-week">W${week}</div>
+        ${slots.sort((a,b) => a.slot - b.slot).map(s => {
+          const d = domMap[s.mod?.domain] || {};
+          const st = ST[s.mod?.status || "planned"];
+          return `<div class="seq-card ${s.mod?.status==='planned'?'dimmed':''}" style="border-left-color:${d.color||'#ccc'}">
+            <div class="seq-card-top">
+              <span class="seq-card-id">${s.module_id}</span>
+              <span class="seq-card-status" style="color:${st.color}">${st.icon}</span>
+            </div>
+            <div class="seq-card-title">${s.mod?.title||''}</div>
+            <div class="seq-card-domain" style="color:${d.color||'#64748b'}">${d.label||''}</div>
+          </div>`;
+        }).join("")}
+      </div>`).join("")}
+    </div>`;
+}
+
+function renderLog() {
+  return `<div class="card" style="padding:0;overflow-x:auto">
+    <table class="tbl"><thead><tr>
+      <th>Date</th><th>Module</th><th>Event</th><th>Notes</th><th>Session</th>
+    </tr></thead><tbody>${state.log.map(e => {
+      const st = ST[e.event] || {};
+      return `<tr>
+        <td style="white-space:nowrap;font-size:12px;color:#94a3b8">${new Date(e.created_at).toLocaleDateString()}</td>
+        <td style="font-weight:700">${e.module_id}</td>
+        <td><span class="status-badge" style="background:${st.bg||'#f1f5f9'};color:${st.color||'#64748b'}">${e.event}</span></td>
+        <td style="color:#475569;max-width:420px">${e.notes||''}</td>
+        <td style="font-size:12px;color:#94a3b8">${e.session_reference||''}</td>
+      </tr>`;
+    }).join("")}</tbody></table>
+  </div>`;
+}
+
+// ─── Actions ─────────────────────────────────────────────────
+window.setTab = function(t) { state.tab = t; render(); };
+window.setFilter = function(f) { state.filter = f; render(); };
+
+// ─── Init ────────────────────────────────────────────────────
+async function init() {
+  render();
+  const [modules, terms, prereqs, log, seq] = await Promise.all([
+    q("modules", "order=id"),
+    q("terminology", "order=introduced_in,term"),
+    q("module_prerequisites", "order=module_id"),
+    q("build_log", "order=created_at.desc"),
+    q("suggested_sequence", "order=week,slot"),
+  ]);
+  state.modules = modules;
+  state.terms = terms;
+  state.prereqs = prereqs;
+  state.log = log;
+  state.seq = seq;
+  state.loading = false;
+  render();
+}
+init();
+</script>
+</body>
+</html>
